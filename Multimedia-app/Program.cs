@@ -1,7 +1,18 @@
+//--------------------------------------------------------------------------
+using Microsoft.EntityFrameworkCore;
+using Multimedia_app.Models;
+using SQLitePCL;
+//----------------------------------------------------------------------------
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//--------------------------------------------------------------------------
+builder.Services.AddDbContext<ArtDbContext>(options =>
+    options.UseSqlite("Data Source=ArtDbContext.db"));
+//----------------------------------------------------------------------------
 
 var app = builder.Build();
 
