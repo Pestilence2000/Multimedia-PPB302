@@ -1,0 +1,68 @@
+﻿.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.art-card {
+    background: #fffaf3;
+    border: 1px solid #e4d7c7;
+    border-radius: 24px;
+    padding: 28px;
+    min-height: 260px;
+    display: flex;
+}
+
+.art-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.art-content h3 {
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+}
+
+.meta {
+    color: #7a7066;
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+}
+
+.art-description {
+    flex: 1;
+    color: #3f3a35;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.admin-actions a {
+    color: #1f1f1f;
+    text-decoration: none;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+@media (max-width: 900px) {
+    .art-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

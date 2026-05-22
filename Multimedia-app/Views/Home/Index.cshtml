@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<html lang="sv">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konstnärens verk</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Konst som hörs, läses och upplevs.</h1>
+                <p>
+                    En digital plats där fysiska konstverk får stöd av ljudfiler,
+                    textmaterial. Besökaren kan lyssna, läsa och fördjupa
+                    sin upplevelse direkt genom att skanna QR-koden vid verket.
+                </p>
+                <a href="#verk" class="btn">Utforska verk</a>
+            </div>
+            <div class="hero-image">
+                Plats för stor bild på konstverk
+            </div>
+        </section>
+
+    <section id="verk">
+        <h2 class="section-title">Utvalda verk</h2>
+        <p class="section-intro">
+            Varje verk har en egen sida där bild, ljudfil, textfil och QR-kod samlas.
+            QR-koden kan placeras bredvid det fysiska konstverket i utställningen.
+        </p>
+
+    <div class="art-grid">
+        <article class="art-card">
+            <div class="art-image">Bild på konstverk</div>
+            <div class="art-content">
+                <h3>Minne av ljus</h3>
+                <p class="meta">Akryl på duk · 2026</p>
+                <p>Ett verk som undersöker minne, rörelse och tystnad.</p>
+
+                <audio controls>
+                    <source src="ljud/minne-av-ljus.mp3" type="audio/mpeg" />
+                    Din webbläsare stödjer inte ljudspelaren.
+                </audio>
+
+                <div class="file-links">
+                    <a class="text-link" href="texter/minne-av-ljus.pdf" target="_blank">Läs textfil</a>
+                    <div class="qr-box">QR<br />kod</div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="art-card">
+            <div class="art-image">Bild på konstverk</div>
+                <div class="art-content">
+                    <h3>Rum mellan andetag</h3>
+                    <p class="meta">Installation · 2026</p>
+                    <p>Ett fysiskt verk med tillhörande ljudberättelse.</p>
+
+                    <audio controls>
+                      <source src="ljud/rum-mellan-andetag.mp3" type="audio/mpeg" />
+                      Din webbläsare stödjer inte ljudspelaren.
+                    </audio>
+
+                    <div class="file-links">
+                        <a class="text-link" href="texter/rum-mellan-andetag.pdf" target="_blank">Läs textfil</a>
+                        <div class="qr-box">QR<br />kod</div>
+                    </div>
+                    </div>
+            </article>
+
+        <article class="art-card">
+            <div class="art-image">Bild på konstverk</div>
+            <div class="art-content">
+                <h3>Fragment</h3>
+                <p class="meta">Blandteknik · 2026</p>
+                <p>Text och ljud fungerar som stöd för verkets tolkning.</p>
+
+                <audio controls>
+                    <source src="ljud/fragment.mp3" type="audio/mpeg" />
+                    Din webbläsare stödjer inte ljudspelaren.
+                </audio>
+
+                <div class="file-links">
+                    <a class="text-link" href="texter/fragment.pdf" target="_blank">Läs textfil</a>
+                    <div class="qr-box">QR<br />kod</div>
+                </div>
+            </div>
+        </article>
+        </div>
+    </section>
+
+    <section id="om" class="about">
+        <div class="portrait-placeholder">Bild på konstnären</div>
+        <div>
+            <h2 class="section-title">Om konstnären</h2>
+            <p>
+                Här kan konstnären beskriva sitt konstnärskap, sin arbetsprocess och
+                varför ljud och text används som stöd till de fysiska verken.
+            </p>
+            <br />
+            <p>
+                Plattformen gör det möjligt för besökare att få en fördjupad upplevelse
+                utan att den fysiska utställningen behöver fyllas med långa texter.
+            </p>
+        </div>
+    </section>
+
+    <section id="ladda-upp" class="upload-section">
+        <h2 class="section-title">Lägg till nytt konstverk</h2>
+        <p class="section-intro">
+            Detta är en visuell skiss för en framtida adminfunktion där konstnären kan
+            ladda upp bild, ljudfil och textfil till varje verk.
+        </p>
+
+        <form class="upload-form">
+            <div class="form-row">
+                <div>
+                    <label for="title">Titel på konstverk</label>
+                    <input id="title" type="text" placeholder="Exempel: Minne av ljus" />
+                </div>
+                <div>
+                    <label for="year">Årtal</label>
+                    <input id="year" type="text" placeholder="2026" />
+                </div>
+            </div>
+
+            <div>
+                <label for="description">Beskrivning</label>
+                <textarea id="description" placeholder="Skriv en kort beskrivning av konstverket"></textarea>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="image">Bild på konstverket</label>
+                    <input id="image" type="file" accept="image/*" />
+                </div>
+                <div>
+                    <label for="audio">Ljudfil</label>
+                    <input id="audio" type="file" accept="audio/*" />
+                </div>
+            </div>
+
+            <div>
+                <label for="textfile">Textfil</label>
+                <input id="textfile" type="file" accept=".pdf,.doc,.docx,.txt" />
+            </div>
+
+            <button type="submit" class="btn">Spara konstverk</button>
+        </form>
+    </section>
+    </main>
+</body>
+</html>
+

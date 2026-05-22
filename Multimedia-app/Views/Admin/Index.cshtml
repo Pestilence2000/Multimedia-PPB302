@@ -1,0 +1,58 @@
+﻿@model List<Artwork>
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<link rel="stylesheet" href="~/css/admin.css">
+<section class="hero">
+    <div class="hero-text">
+        <h1>Konst som hörs, läses och upplevs.</h1>
+        <p>
+            Här kan konstnären se och hantera sina verk. Besökare når varje verk
+            genom att skanna en QR-kod.
+        </p>
+
+        <a href="/AdminArtwork/Create" class="btn">Lägg till nytt verk</a>
+    </div>
+
+    <div class="hero-image">
+        Åsa Rejnö
+    </div>
+</section>
+
+<section id="verk">
+    <div class="section-header">
+        <div>
+            <h2 class="section-title">Mina verk</h2>
+            <p class="section-intro">Alla uppladdade verk visas automatiskt här.</p>
+        </div>
+
+        <a href="/AdminArtwork/Create" class="btn">+ Nytt verk</a>
+    </div>
+
+    <div class="art-grid">
+        @foreach (var artwork in Model)
+        {
+            <article class="art-card">
+                <div class="art-content">
+                    <h3>@artwork.Title</h3>
+
+                    <p class="meta">
+                        Skapad @artwork.CreatedAt.ToString("yyyy-MM-dd")
+                    </p>
+
+                    <p class="art-description">
+                        @artwork.Description
+                    </p>
+
+                    <div class="admin-actions">
+                        <a href="/Artwork/Details/@artwork.Id">Visa QR-sida</a>
+                        <a href="/AdminArtwork/Edit/@artwork.Id">Ändra</a>
+                        <a href="/AdminArtwork/Delete/@artwork.Id">Ta bort</a>
+                    </div>
+                </div>
+            </article>
+        }
+    </div>
+</section>
+

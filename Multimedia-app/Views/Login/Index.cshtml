@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/css/login.css">
+<section class="login-page">
+    <div class="login-card">
+        <h1>Logga in</h1>
+        <p>Endast konstnären kan lägga till, ändra eller ta bort konstverk.</p>
+
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <div class="form-group">
+                <label for="email">E-post</label>
+                <input id="email" name="email" type="email" placeholder="namn@email.se" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Lösenord</label>
+                <input id="password" name="password" type="password" placeholder="Lösenord" required />
+            </div>
+
+            <button type="submit" class="login-submit">Logga in</button>
+        </form>
+    </div>
+</section>
