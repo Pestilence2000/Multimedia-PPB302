@@ -1,0 +1,52 @@
+﻿@model TModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/site.css">
+
+<section id="ladda-upp" class="upload-section">
+    <h2 class="section-title">Lägg till nytt konstverk</h2>
+    <p class="section-intro">
+        Detta är en visuell skiss för en framtida adminfunktion där konstnären kan
+        ladda upp bild, ljudfil och textfil till varje verk.
+    </p>
+
+    <form class="upload-form">
+        <div class="form-row">
+            <div>
+                <label for="title">Titel på konstverk</label>
+                <input id="title" type="text" placeholder="Exempel: Minne av ljus" />
+            </div>
+            <div>
+                <label for="year">Årtal</label>
+                <input id="year" type="text" placeholder="2026" />
+            </div>
+        </div>
+
+        <div>
+            <label for="description">Beskrivning</label>
+            <textarea id="description" placeholder="Skriv en kort beskrivning av konstverket"></textarea>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="image">Bild på konstverket</label>
+                <input id="image" type="file" accept="image/*" />
+            </div>
+            <div>
+                <label for="audio">Ljudfil</label>
+                <input id="audio" type="file" accept="audio/*" />
+            </div>
+        </div>
+
+        <div>
+            <label for="textfile">Textfil</label>
+            <input id="textfile" type="file" accept=".pdf,.doc,.docx,.txt" />
+        </div>
+
+        <button type="submit" class="btn">Spara konstverk</button>
+    </form>
+</section>
