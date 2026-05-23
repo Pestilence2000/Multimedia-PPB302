@@ -1,5 +1,4 @@
-﻿@model TModel
-
+﻿@model Multimedia_app.Models.Artwork
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
@@ -14,37 +13,30 @@
         ladda upp bild, ljudfil och textfil till varje verk.
     </p>
 
-    <form class="upload-form">
-        <div class="form-row">
-            <div>
-                <label for="title">Titel på konstverk</label>
-                <input id="title" type="text" placeholder="Exempel: Minne av ljus" />
-            </div>
-            <div>
-                <label for="year">Årtal</label>
-                <input id="year" type="text" placeholder="2026" />
-            </div>
+    <form class="upload-form"
+          asp-controller="Create"
+          asp-action="Index"
+          method="post"
+          enctype="multipart/form-data">
+
+        <div>
+            <label asp-for="Title">Titel på konstverk</label>
+            <input asp-for="Title" placeholder="Exempel: Minne av ljus" />
         </div>
 
         <div>
-            <label for="description">Beskrivning</label>
-            <textarea id="description" placeholder="Skriv en kort beskrivning av konstverket"></textarea>
-        </div>
-
-        <div class="form-row">
-            <div>
-                <label for="image">Bild på konstverket</label>
-                <input id="image" type="file" accept="image/*" />
-            </div>
-            <div>
-                <label for="audio">Ljudfil</label>
-                <input id="audio" type="file" accept="audio/*" />
-            </div>
+            <label asp-for="Description">Beskrivning</label>
+            <textarea asp-for="Description"></textarea>
         </div>
 
         <div>
-            <label for="textfile">Textfil</label>
-            <input id="textfile" type="file" accept=".pdf,.doc,.docx,.txt" />
+            <label for="audioFile">Ljudfil</label>
+            <input id="audioFile" name="audioFile" type="file" accept="audio/*" />
+        </div>
+
+        <div>
+            <label for="textFile">Textfil</label>
+            <input id="textFile" name="textFile" type="file" accept=".pdf,.doc,.docx,.txt" />
         </div>
 
         <button type="submit" class="btn">Spara konstverk</button>
