@@ -20,14 +20,12 @@
         @if (User.Identity.IsAuthenticated)
         {
             <a href="/AdminArtwork">Hantera verk</a>
+
             <form method="post" asp-controller="Login" asp-action="Logout">
                 <button class="login-btn" type="submit">Logga ut</button>
             </form>
         }
-        else
-        {
-            <a class="login-btn" href="/Login/Index">Logga in</a>
-        }
+        
     </nav>
 </header>
 <div class="container">
