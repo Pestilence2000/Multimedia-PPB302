@@ -48,7 +48,7 @@ public class CreateController : Controller
             memoryStream.Position = 0;
 
             var extension = Path.GetExtension(textFile.FileName).ToLower();
-
+            
             if (extension == ".txt")
             {
                 using var reader = new StreamReader(memoryStream);
@@ -74,6 +74,6 @@ public class CreateController : Controller
         _context.Artworks.Add(artwork);
         await _context.SaveChangesAsync();
 
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("Index", "Admin");
     }
 }
