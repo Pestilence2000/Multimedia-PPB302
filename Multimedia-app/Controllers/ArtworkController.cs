@@ -11,7 +11,8 @@ public class ArtworkController: Controller
     {
         _context = context;
     }
-
+    
+    /*------------------------------ Ljud funktion -----------------------------------*/
     public IActionResult Audio(int id)
     {
         var artwork = _context.Artworks.Find(id);
@@ -27,6 +28,8 @@ public class ArtworkController: Controller
         );
     }
 
+    /*------------------------------ Text funktion -----------------------------------*/
+    
     public IActionResult TextFile(int id)
     {
         var artwork = _context.Artworks.Find(id);
@@ -40,6 +43,8 @@ public class ArtworkController: Controller
             artwork.TextFileName ?? "textfil"
         );
     }
+    
+    /*------------------------------ Visa upp specifikt innehåll -----------------------------------*/
     
     public IActionResult Index(int id)
     {
