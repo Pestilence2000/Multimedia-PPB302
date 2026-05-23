@@ -1,0 +1,30 @@
+﻿@model Multimedia_app.Models.Artwork
+
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "_Layout";
+}
+
+<section class="details-page">
+    <h1>@Model.Title</h1>
+
+    @if (!string.IsNullOrWhiteSpace(Model.Description))
+    {
+        <p>@Model.Description</p>
+    }
+
+    @if (Model.AudioFile != null)
+    {
+        <audio controls>
+            <source src="/Artwork/Audio/@Model.Id"
+                    type="@Model.AudioContentType" />
+        </audio>
+    }
+
+    @if (!string.IsNullOrWhiteSpace(Model.TextContent))
+    {
+        <div class="text-content">
+            @Model.TextContent
+        </div>
+    }
+</section>
